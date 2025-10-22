@@ -3,6 +3,8 @@
 *~
 buck-out/
 
+human-lung-healthy-panel/
+
 # Compiled files
 .venv/
 __pycache__/

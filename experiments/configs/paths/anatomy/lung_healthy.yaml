@@ -1,8 +1,8 @@
 # data: ${paths.base_path}/paired_ts8_human_lung_healthy_panel.dataset
 dataset_name: human-lung-healthy-panel
-train_csv: /home/exouser/Public/modified/data/human-lung-healthy-panel/train.csv
-val_csv: /home/exouser/Public/modified/data/human-lung-healthy-panel/val.csv
-test_csv: /home/exouser/Public/modified/data/human-lung-healthy-panel/test.csv
+train_csv: ~/cvpr25/modified/data/human-lung-healthy-panel/train.csv
+val_csv: ~/cvpr25/modified/data/human-lung-healthy-panel/val.csv
+test_csv: ~/cvpr25/modified/data/human-lung-healthy-panel/test.csv
 
 
 output: ${paths.base_output_path}/human_lung_healthy_panel

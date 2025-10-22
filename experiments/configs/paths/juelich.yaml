@@ -1,7 +1,7 @@
 defaults:
-  - anatomy: lung_healthy
+  - anatomy: multi_tissue
 
-dataset_path : /home/exouser/Public/modified/human_lung_panel
+dataset_path : ~/cvpr25/modified/human_multi_tissue_panel
 data_files_path: ${project_root:}/data
 
 # base_splits_path: /p/project1/hai_spatial_clip/hescape/data
@@ -10,6 +10,6 @@ base_output_path: ${project_root:}/../results
 
 
 pretrain_weights:
-  img_enc_path: /home/exouser/Public/pretrained_weights/image
-  gene_enc_path: /home/exouser/Public/pretrained_weights/gene
+  img_enc_path: ~/cvpr25/pretrained_weights/image
+  gene_enc_path: ~/cvpr25/pretrained_weights/gene
   base_data_gene_reference_path: /p/project1/hai_spatial_clip/hescape/data
