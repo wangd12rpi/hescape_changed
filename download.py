@@ -10,7 +10,7 @@ from huggingface_hub import login
 
 
 # 会自动下载全部 802 个 parquet 分片到本地缓存
-dataset = load_dataset("Peng-AI/hescape-pyarrow", name="human-lung-healthy-panel", split="train")
+dataset = load_dataset("Peng-AI/hescape-pyarrow", name="human-multi-tissue-panel", split="train")
 
 
-dataset.save_to_disk("human-lung-healthy-panel")
+dataset.save_to_disk("human-multi-tissue-panel")
