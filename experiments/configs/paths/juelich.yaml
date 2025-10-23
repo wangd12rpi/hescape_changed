@@ -1,7 +1,7 @@
 defaults:
   - anatomy: multi_tissue
 
-dataset_path : ~/cvpr25/modified/human_multi_tissue_panel
+dataset_path : ~/cvpr25/modified/human-multi-tissue-panel
 data_files_path: ${project_root:}/data
 
 # base_splits_path: /p/project1/hai_spatial_clip/hescape/data
