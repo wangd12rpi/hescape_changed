@@ -100,7 +100,6 @@ class ImageEncoder(nn.Module):
         elif model_name == "ctranspath":
             trunk = _build_ctranspath_model()
             checkpoint_path = checkpoint_root / model_name / "ctranspath.pth"
-            checkpoint_path = os.path.abspath(checkpoint_path)
             trunk.load_state_dict(torch.load(checkpoint_path, weights_only=True), strict=False)
             print(f"Successfully loaded weights for {model_name}")
 
@@ -116,6 +115,7 @@ class ImageEncoder(nn.Module):
                 dynamic_img_size=True,
             )
             checkpoint_path = checkpoint_root / model_name / "pytorch_model.bin"
+            checkpoint_path = os.path.abspath(checkpoint_path)
 
             trunk.load_state_dict(torch.load(checkpoint_path, weights_only=True), strict=True)
             print(f"Successfully loaded weights for {model_name}")
