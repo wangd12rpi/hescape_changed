@@ -100,6 +100,7 @@ class ImageEncoder(nn.Module):
         elif model_name == "ctranspath":
             trunk = _build_ctranspath_model()
             checkpoint_path = checkpoint_root / model_name / "ctranspath.pth"
+            checkpoint_path = os.path.abspath(checkpoint_path)
             trunk.load_state_dict(torch.load(checkpoint_path, weights_only=True), strict=False)
             print(f"Successfully loaded weights for {model_name}")
 
@@ -115,6 +116,7 @@ class ImageEncoder(nn.Module):
                 dynamic_img_size=True,
             )
             checkpoint_path = checkpoint_root / model_name / "pytorch_model.bin"
+
             trunk.load_state_dict(torch.load(checkpoint_path, weights_only=True), strict=True)
             print(f"Successfully loaded weights for {model_name}")
 
@@ -233,7 +235,7 @@ class ImageEncoder(nn.Module):
                 noisy_gating=True,
                 acc_aux_loss=False,
             )
-        
+
         return nn.Sequential(head_layers)
 
     def freeze(self, freeze_bn_stats=True):
@@ -245,31 +247,31 @@ class ImageEncoder(nn.Module):
 
     def forward(self, x):
         """Forward pass."""
-        
-    
+
+
         features = {}
-    
+
         if self.proj in ["mlp", "linear","moe"]:
-            
+
             x = self.trunk(x)
-            
+
             if self.model_name in ["conch", "h0-mini"]:
                 x = x[:, 0, :]
             x = self.head(x)
-            
-    
+
+
         elif self.proj == "transformer":
-            
+
             tokens = self.trunk.forward_features(x)
             x = self.head(tokens)
             x = x[:, 0, :]
-            
-           
-    
+
+
+
         else:
             print(f"[ENCODER DEBUG] No branch matched for proj={self.proj}, returning raw x={x.shape}")
-    
-        
+
+
         return x.contiguous()  # Ensure contiguous memory layout
 
 
