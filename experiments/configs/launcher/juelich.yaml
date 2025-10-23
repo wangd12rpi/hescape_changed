@@ -17,4 +17,4 @@ hydra:
     timeout_min: 1440
     array_parallelism: 20 # max num of tasks to run in parallel (via job array)
     setup:
-      - CUDA_VISIBLE_DEVICES=0,1,2,3
+      - CUDA_VISIBLE_DEVICES=0,1
