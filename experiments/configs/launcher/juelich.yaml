@@ -11,8 +11,8 @@ hydra:
     account: hai_spatial_clip
     cpus_per_task: 8
     mem_gb: 480
-    gres: gpu:4
-    gpus_per_node: 4
+    gres: gpu:2
+    gpus_per_node: 2
     tasks_per_node: 4
     timeout_min: 1440
     array_parallelism: 20 # max num of tasks to run in parallel (via job array)
