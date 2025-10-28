@@ -32,12 +32,12 @@ datamodule:
   persistent_workers: false
   data_gene_reference_path: "~/cvpr25/modified/data/human-lung-healthy-panel/nicheformer_reference.h5ad"
 
-  
+
 training:
   lightning:
     trainer:
       max_steps: 20000
-      devices: 4
+      devices: 2
       num_nodes: 1
       strategy: ddp
       accelerator: "gpu"

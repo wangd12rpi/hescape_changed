@@ -4,7 +4,7 @@ lightning:
     _partial_: true
     max_steps: 40_000
     enable_progress_bar: true
-    devices: 1  # Keep this for single GPU
+    devices: 2  # Keep this for single GPU
     num_nodes: 1
     strategy: "auto"  # Change to 'auto' (or remove this line entirely—it defaults to single-device)
     precision: "bf16-mixed"

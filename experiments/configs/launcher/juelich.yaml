@@ -13,7 +13,7 @@ hydra:
     mem_gb: 480
     gres: gpu:2
     gpus_per_node: 2
-    tasks_per_node: 4
+    tasks_per_node: 2
     timeout_min: 1440
     array_parallelism: 20 # max num of tasks to run in parallel (via job array)
     setup:
